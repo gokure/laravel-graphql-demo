@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Quest;
+use App\Models\Category;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +15,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(WinesTableSeeder::class);
+        // $this->call(WinesTableSeeder::class);
+        Category::factory(10)->create();
+        Quest::factory(10)->create();
     }
 }

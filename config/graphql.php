@@ -102,11 +102,20 @@ return [
     'schemas' => [
         'default' => [
             'query' => [
-                App\GraphQL\Queries\WineQuery::class,
-                App\GraphQL\Queries\WinesQuery::class,
+                'wine' => App\GraphQL\Queries\WineQuery::class,
+                'wines' => App\GraphQL\Queries\WinesQuery::class,
+                'quest' => App\GraphQL\Queries\QuestQuery::class,
+                'quests' => App\GraphQL\Queries\QuestsQuery::class,
+                'category' => App\GraphQL\Queries\CategoryQuery::class,
+                'categories' => App\GraphQL\Queries\CategoriesQuery::class,
             ],
             'mutation' => [
-                // ExampleMutation::class,
+                'createQuest' => App\GraphQL\Mutations\Quest\CreateMutation::class,
+                'updateQuest' => App\GraphQL\Mutations\Quest\UpdateMutation::class,
+                'deleteQuest' => App\GraphQL\Mutations\Quest\DeleteMutation::class,
+                'createCategory' => App\GraphQL\Mutations\Category\CreateMutation::class,
+                'updateCategory' => App\GraphQL\Mutations\Category\UpdateMutation::class,
+                'deleteCategory' => App\GraphQL\Mutations\Category\DeleteMutation::class,
             ],
             'types' => [
                 // ExampleType::class,
@@ -127,6 +136,8 @@ return [
     //
     'types' => [
         App\GraphQL\Types\WineType::class,
+        App\GraphQL\Types\QuestType::class,
+        App\GraphQL\Types\CategoryType::class,
     ],
 
     // The types will be loaded on demand. Default is to load all types on each request
