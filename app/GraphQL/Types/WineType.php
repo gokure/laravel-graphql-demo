@@ -18,7 +18,7 @@ class WineType extends GraphQLType
     {
         return [
             'id' => [
-                'type' => Type::nonNull(Type::int()),
+                'type' => Type::nonNull(Type::id()),
                 'description' => 'Id of the wine',
             ],
             'name' => [
